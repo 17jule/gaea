@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <property name="LOG_HOME" value="${app.log.dir:-logs}"/>
+    <timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss"/>
+    <contextName>fund-api-automation</contextName>
+
+    <include resource="logback-config.xml"/>
+
+    <!-- WARN,ERROR信息打印控制台, 记录到日志文件-->
+    <logger name="com.alibaba.dubbo" level="WARN" additivity="true">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="com.github.diamond" level="WARN" additivity="true">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="org.springframework" level="WARN" additivity="true">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="org.apache.zookeeper" level="WARN" additivity="true">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="org.I0Itec.zkclient" level="WARN" additivity="true">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="org.apache.zookeeper" level="ERROR" additivity="true">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="ch.qos.logback" level="ERROR" additivity="true">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <!-- 测试包INFO、WARN、ERROR信息仅打印控制台-->
+    <logger name="com.qa" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <root level="INFO">
+        <!--<appender-ref ref="STDOUT" />-->
+        <appender-ref ref="LOGFILE" />
+    </root>
+
+</configuration>

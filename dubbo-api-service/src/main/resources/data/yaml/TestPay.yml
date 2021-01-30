@@ -1,0 +1,20 @@
+test_pay:
+# 正常用例
+ - amount: "10000"
+   desc: "支付"
+   bizCode: "1001001"
+   cardNo: "621999999999949999"
+   uid: "10000001"
+   userName: "gaea"
+   idCardNo: "311029203105314694"
+   payId: "200000001"
+test_pay_abnormal:
+# 异常用例（uid不传等）
+ - amount: "10000"
+   desc: "支付"
+   bizCode: "1001001"
+   cardNo: "621999999999949999"
+#   uid: "10000001"
+   userName: "gaea"
+   idCardNo: "311029203105314694"
+   payId: "200000001"

@@ -1,0 +1,10 @@
+{
+  "schema": "payment.pay",
+  "apis": {
+    "pay": {
+      "request": {
+        "var0": "${payRequestParams}"
+      }
+    }
+  }
+}
